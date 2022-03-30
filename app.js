@@ -21,18 +21,31 @@ const promptUser = () => {
       name: 'github',
       message: 'Enter your GitHub Username',
       validate: githubName => {
-        if(githubName){
+        if (githubName) {
           return true
-        } else{
+        } else {
           console.log("please enter your github Username");
           return false
         }
       }
     },
     {
+      type:'confirm',
+      name: 'confirmAbout',
+      message: 'Would you like to enter some information about yourself for an "About" section?',
+      default: true
+    },
+    {
       type: 'input',
       name: 'about',
-      message: 'Provide some information about yourself:'
+      message: 'Provide some information about yourself:',
+      when: ({confirmAbout}) =>{
+        if(confirmAbout){
+          return true;
+        }else {
+          return false;
+        }
+      }
     }
   ])
 };
@@ -53,9 +66,9 @@ Add a New Project
       name: 'name',
       message: 'What is the name of your project?',
       validate: projectName => {
-        if(projectName){
+        if (projectName) {
           return true
-        } else{
+        } else {
           console.log("Please enter your project's name")
           return false
         }
@@ -66,9 +79,9 @@ Add a New Project
       name: 'description',
       message: 'Provide a description of the project (Required)',
       validate: projectDescription => {
-        if(projectDescription){
+        if (projectDescription) {
           return true
-        }else{
+        } else {
           console.log("Please enter a description about your project");
           return false
         }
@@ -85,9 +98,9 @@ Add a New Project
       name: 'link',
       message: 'Enter the GitHub link to your project. (Required)',
       validate: projectLink => {
-        if(projectLink){
+        if (projectLink) {
           return true
-        }else{
+        } else {
           console.log("Please enter a link to your project");
           return false
         }
