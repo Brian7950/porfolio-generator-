@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // const generateSite = require('./utils/generate-site.js');
 const {writeFile, copyFile} = require('./utils/generate-site.js');
 const inquirer = require('inquirer');
@@ -145,3 +146,6 @@ Add a New Project
   .catch(err => {
     console.log(err);
   });
+=======
+console.log('hello node!'); 
+>>>>>>> b01cdad8ef70f3499bb5c43c9636f848100ac458
