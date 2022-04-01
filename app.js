@@ -1,4 +1,5 @@
-const fs = require('fs');
+// const generateSite = require('./utils/generate-site.js');
+const {writeFile, copyFile} = require('./utils/generate-site.js');
 const inquirer = require('inquirer');
 const generatePage = require('./src/page-template');
 
@@ -125,13 +126,6 @@ Add a New Project
       }
     });
 };
-
-//Mock(dummy)data
-// const mockData = {
-//   name: 'FakeData',
-//   github: 'SomeFake GitHub',
-//   projects: []
-// }
 
   promptUser()
   .then(promptProject)
